@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/food.dart/popular_food.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-
+import 'package:flutter/services.dart';
 import 'pages/main_food_page/main_food_page.dart';
 
 void main() {
@@ -15,17 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'foodpage',
+      initialRoute: 'popular',
       routes: {
-         'foodpage': (context)=> mianfoodpage(),
-    
+        'foodpage': (context) => mianfoodpage(),
+        'popular': (context) => popularfooddetail(),
       },
-     
-      
-     
-    
-     
     );
   }
 }
-

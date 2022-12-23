@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/font/big_text.dart';
 import 'package:food_delivery/font/small_text.dart';
+import 'package:food_delivery/widget/app_column.dart';
 import 'package:food_delivery/widget/icon_text.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
@@ -206,64 +207,7 @@ class _foodpagebodyState extends State<foodpagebody> {
               ),
               child: Container(
                 padding: EdgeInsets.only(left: 15, right: 10, top: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    big_text(text: "Hello Dish"),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) {
-                            return Icon(
-                              Icons.star,
-                              color: Colors.amber.shade700,
-                            );
-                          }),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        small_text(text: "43"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        small_text(text: "234"),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        small_text(text: "Comments")
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      children: [
-                        icon_text(
-                            icon: Icons.circle,
-                            iconcolor: Colors.amber.shade700,
-                            text: "Normal"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        icon_text(
-                            icon: Icons.location_on_outlined,
-                            iconcolor: Colors.blue.shade300,
-                            text: "1.5 Km"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        icon_text(
-                            icon: Icons.access_time_rounded,
-                            iconcolor: Colors.red,
-                            text: "40 Minutes"),
-                      ],
-                    )
-                  ],
-                ),
+                child: app_column(text: "Chinise Side")
               ),
             ),
           ),
