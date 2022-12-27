@@ -16,17 +16,18 @@ class foodpagebody extends StatefulWidget {
 }
 
 class _foodpagebodyState extends State<foodpagebody> {
-  
   PageController pageController = PageController(viewportFraction: 0.9);
-  
+
   double _scalefactor = 0.8;
   var _currentpage = 0.0;
 
   double _height = 220;
   @override
-  void initstate() {
+  //always use init state do not write void myself and write only init  and use it wisely
+  void initState() {
+    // TODO: implement initState
     super.initState();
-    pageController..addListener(() {
+    pageController.addListener(() {
       setState(() {
         _currentpage = pageController.page!;
       });
@@ -47,7 +48,7 @@ class _foodpagebodyState extends State<foodpagebody> {
       children: [
         Container(
           //color: Colors.grey.shade400,
-          height: ht* 0.4,
+          height: ht * 0.4,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -62,89 +63,99 @@ class _foodpagebodyState extends State<foodpagebody> {
               color: Colors.black87, // Inactive color
               activeColor: Colors.amber.shade700,
             )),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    big_text(text: "Popular",),
-                    SizedBox(width: 3,),
-                    big_text(text: "."),
-                    SizedBox(width: 5,),
-                    small_text(text: "In Food Pairing",size: 14),
-                ],
-                ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              big_text(
+                text: "Popular",
               ),
-              SizedBox(height: 20,),
-
-              Container(
-                     height:ht*0.6 ,
-                     width: wd*.95,
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        physics: AlwaysScrollableScrollPhysics(),
-                        itemCount: 10,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: EdgeInsets.only(left: 30,right: 30,top: 4,bottom: 4),
-                            child: Row(children: [
-                              Container(
-
-                                height: ht*.13,
-                                width: wd*.25,
-                               
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage("assets/image/food12.png")
-                                  ),
-                                  borderRadius: BorderRadius.circular(25),
-                                  
+              SizedBox(
+                width: 3,
+              ),
+              big_text(text: "."),
+              SizedBox(
+                width: 5,
+              ),
+              small_text(text: "In Food Pairing", size: 14),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: ht * 0.6,
+          width: wd * .95,
+          child: ListView.builder(
+              shrinkWrap: true,
+              physics: AlwaysScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin:
+                      EdgeInsets.only(left: 30, right: 30, top: 4, bottom: 4),
+                  child: Row(children: [
+                    Container(
+                      height: ht * .13,
+                      width: wd * .25,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/image/food12.png")),
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                    ),
+                    //SizedBox(width: 2,),
+                    Container(
+                      height: ht * .11,
+                      width: wd * .54,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(15),
+                              bottomRight: Radius.circular(15)),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Column(
+                          children: [
+                            big_text(text: "Nutrioous meal in India"),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            small_text(text: "with Indian characterstics"),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                icon_text(
+                                  icon: Icons.location_on_outlined,
+                                  iconcolor: Colors.blue.shade300,
+                                  text: "1.5 Km",
+                                  size: 16,
                                 ),
-                              ),
-                              //SizedBox(width: 2,),
-                              Container(
-                                height: ht*.11,
-                                width: wd*.54,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(topRight: Radius.circular(15),bottomRight: Radius.circular(15)),
-                                  color: Colors.white
+                                SizedBox(
+                                  width: 10,
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Column(
-                                    children: [
-                                      big_text(text: "Nutrioous meal in India"),
-                                      SizedBox(height: 4,),
-                                      small_text(text: "with Indian characterstics"),
-                                      SizedBox(height: 4,),
-                                      Row(mainAxisAlignment: MainAxisAlignment.start,
-                                        children: [
-                                      
-                                          icon_text(
-                                            icon: Icons.location_on_outlined,
-                                            iconcolor: Colors.blue.shade300,
-                                            text: "1.5 Km",size: 16,),
-                                          SizedBox(
-                                            width: 10,
-                                                 ),
-                                        icon_text(
-                                            icon: Icons.access_time_rounded,
-                                            iconcolor: Colors.red,
-                                            text: "40 Minutes",size: 16,),
-                                        ],
-                                      )
-                                      
-                                      ],
-                                  ),
+                                icon_text(
+                                  icon: Icons.access_time_rounded,
+                                  iconcolor: Colors.red,
+                                  text: "40 Minutes",
+                                  size: 16,
                                 ),
-                              )
-                            ]),
-                          );
-
-                      }),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
                     )
+                  ]),
+                );
+              }),
+        )
       ],
     );
   }
@@ -204,9 +215,8 @@ class _foodpagebodyState extends State<foodpagebody> {
                 color: Colors.white,
               ),
               child: Container(
-                padding: EdgeInsets.only(left: 15, right: 10, top: 10),
-                child: app_column(text: "Chinise Side")
-              ),
+                  padding: EdgeInsets.only(left: 15, right: 10, top: 10),
+                  child: app_column(text: "Chinise Side")),
             ),
           ),
         ],

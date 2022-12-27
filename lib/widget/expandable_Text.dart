@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/font/small_text.dart';
+import 'package:food_delivery/font/small_text2.dart';
 import 'package:food_delivery/widget/mobliedymansion.dart';
 
 class expandable_text extends StatefulWidget {
   final String text;
-  
-const expandable_text({super.key, required this.text});
+  final double  size;
+
+  const expandable_text({super.key, required this.text,  this.size =18});
 
   @override
   State<expandable_text> createState() => _expandable_textState();
@@ -18,7 +20,9 @@ class _expandable_textState extends State<expandable_text> {
   late String firsthalf;
   late String secondhalf;
   bool hiddenText = true;
-  double textheight =200;
+  double textheight = 300;
+  
+  
 
   @override
   void initState() {
@@ -38,10 +42,10 @@ class _expandable_textState extends State<expandable_text> {
   Widget build(BuildContext context) {
     return Container(
       child: secondhalf.isEmpty
-          ? small_text(text: firsthalf)
+          ? small_text2(text: firsthalf)
           : Column(
               children: [
-                small_text(
+                small_text2(
                     text: hiddenText
                         ? (firsthalf + "...")
                         : (firsthalf + secondhalf)),

@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/widget/app_column.dart';
 import 'package:food_delivery/widget/expandable_Text.dart';
-import 'package:food_delivery/widget/popular_icon.dart';
+import 'package:food_delivery/widget/app_icon.dart';
 import '../../font/big_text.dart';
 import '../../font/small_text.dart';
 import '../../widget/icon_text.dart';
@@ -68,7 +68,10 @@ class popularfooddetail extends StatelessWidget {
                       SizedBox(height: 7,),
                       big_text(text: "Introduce",),
                       SizedBox(height: 7,),
-                      Expanded(child: SingleChildScrollView(child: expandable_text(text: "aromatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiup oiuiupoiuaromatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiup"))),
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: expandable_text(
+                            text: "iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiup"))),
                       
 
                     ],
