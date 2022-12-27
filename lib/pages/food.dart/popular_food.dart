@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/widget/app_column.dart';
+import 'package:food_delivery/widget/expandable_Text.dart';
 import 'package:food_delivery/widget/popular_icon.dart';
-
 import '../../font/big_text.dart';
 import '../../font/small_text.dart';
 import '../../widget/icon_text.dart';
@@ -17,7 +17,7 @@ class popularfooddetail extends StatelessWidget {
     var wd = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+       backgroundColor: Colors.white,
         body: Stack(
           children: [
             Positioned(
@@ -46,11 +46,11 @@ class popularfooddetail extends StatelessWidget {
                         icon: Icons.shopping_cart_outlined, iconSize: wd * .09),
                   ],
                 )),
-            Positioned(
+             Positioned(
               left: 0,
               right: 0,
               bottom: 0,
-              top: ht * 0.45 - 30,
+              top: ht * 0.45 -30,
               child: Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -67,6 +67,9 @@ class popularfooddetail extends StatelessWidget {
                       app_column(text: 'chinise side',),
                       SizedBox(height: 7,),
                       big_text(text: "Introduce",),
+                      SizedBox(height: 7,),
+                      Expanded(child: SingleChildScrollView(child: expandable_text(text: "aromatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiup oiuiupoiuaromatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiuparomatic iouiou oiuoipu iopuopiu poiupoiu poiupiou poiupoiu poiupoiu poiup"))),
+                      
 
                     ],
                   )
