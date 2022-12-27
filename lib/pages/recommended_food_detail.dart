@@ -5,6 +5,8 @@ import 'package:food_delivery/font/big_text.dart';
 import 'package:food_delivery/widget/app_icon.dart';
 import 'package:food_delivery/widget/expandable_Text.dart';
 
+import '../font/small_text.dart';
+
 class recommendedfooddetail extends StatefulWidget {
   const recommendedfooddetail({super.key});
 
@@ -73,14 +75,62 @@ class _recommendedfooddetailState extends State<recommendedfooddetail> {
         bottomNavigationBar: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                appicon(icon: Icons.remove,backgroundcolor: Colors.amber.shade600,),
-                appicon(icon: Icons.add,backgroundcolor: Colors.amber.shade600,)
-              ],
+            Padding(
+
+              padding: EdgeInsets.only(left: wd*0.1 ,right: wd*0.1,bottom:wd*0.02 ,top: wd*0.02 ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //mainAxisSize: MainAxisSize.min,
+                children: [
+                  appicon(icon: Icons.remove,backgroundcolor: Colors.amber.shade600,),
+                  big_text(text: "\$12.88"+"X"+"0",color: Colors.black),
+                  appicon(icon: Icons.add,backgroundcolor: Colors.amber.shade600,)
+
+                ],
+              ),
+            ),
+
+             Container(
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(wd * 0.07),topRight: Radius.circular(wd * 0.07)
             )
+          ),
+          height: ht*0.12,
+          padding: EdgeInsets.only(
+            left: wd * 0.09,right:wd * 0.09 , top: wd * 0.04,bottom: wd * 0.04
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Container(
+              width: ht*0.09,
+              height: ht*0.07,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(wd*0.1)
+
+              ),
+              child: Icon(Icons.favorite_rounded,color: Colors.amber.shade600, size: ht*0.04,)
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: wd*0.35,
+              height: wd*0.14,
+              decoration: BoxDecoration(
+                color: Colors.amber.shade600,
+                borderRadius: BorderRadius.circular(wd*.2)
+              ),
+
+              child: small_text(text: "\$10 | add to cart"),
+
+            )
+          ]
+          ),
+        
+        ),
+
           ],
         ),
       ),

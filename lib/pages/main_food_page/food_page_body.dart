@@ -23,7 +23,7 @@ class _foodpagebodyState extends State<foodpagebody> {
 
   double _height = 220;
   @override
-  //always use init state do not write void myself and write only init  and use it wisely
+  //always use init state do not write void myself and write only init  and use it accordingly
   void initState() {
     // TODO: implement initState
     super.initState();
