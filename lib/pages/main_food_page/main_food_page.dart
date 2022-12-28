@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/font/big_text.dart';
 import 'package:food_delivery/font/small_text.dart';
+import 'package:get/get.dart';
 
 import 'food_page_body.dart';
 
@@ -49,7 +50,9 @@ class _mianfoodpageState extends State<mianfoodpage> {
                                     text: "city",
                                     size: 20,
                                   ),
-                                  Icon(Icons.arrow_drop_down),
+                                  IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: () { 
+                                    navigator!.pushNamed('recommended');
+                                   },),
                                 ],
                               )
                             ],
@@ -66,7 +69,9 @@ class _mianfoodpageState extends State<mianfoodpage> {
                                       borderRadius: BorderRadius.circular(15),
                                       color: Colors.amber.shade400),
                                   child: IconButton(
-                                    onPressed: (() {}),
+                                    onPressed: (() {
+                                      navigator!.pushNamed('popular');
+                                    }),
                                     icon: Icon(Icons.search),
                                     color: Colors.white,
                                   ))
